@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user.user %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+<p>Time to say <%= link_to "hello", say_hello_path %>!</p>
+<p>And now it's time to say <%= link_to "goodbye", say_goodbye_path %>!</p>
