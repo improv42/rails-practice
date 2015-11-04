@@ -1,0 +1,41 @@
+<header class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center">Posts</h1>
+
+      <p></p>
+    </div>
+  </div>
+</header>
+
+<body>
+  <article class="container-fluid all-posts">
+    <div class="row">
+      <div class="col-sm-2 text-center" id="nav-panel">
+        <button class="get-around btn btn-info" type="submit"><%= link_to 'About', static_pages_about_path %></button>
+        <button class="get-around btn btn-info" type="submit"><%= link_to 'New Post', new_post_path %></button>
+      </div>
+      <div class="col-sm-10 panel-heading">
+        <% @posts.each do |post| %>
+          <p class="text-center panel-title"><strong><%= post.title %></strong><br/><style="font-size: 2px;"><%= post.author %><br/><em><%= post.created_at.stamp('April 3rd, 2015') %></em></style></p>
+
+          <p class="panel-body"><%= simple_format(post.content) %></p>
+          <p><br/><button class="btn btn-info btn-xs" type="submit"><%= link_to 'Show', post %></button>
+          <button class="btn btn-info btn-xs" type="submit"><%= link_to 'Edit', edit_post_path(post) %></button>
+          <button class="btn btn-info btn-xs" type="submit"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></button><hr/></p>
+        <% end %>
+      </div>
+    </div>
+  </article>
+
+</body>
+
+<footer>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="foot-nav" class="col-xs-12 text-center">
+        <a id="twitter" href="https://twitter.com/improv42" target="_blank"><i class="fa fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>

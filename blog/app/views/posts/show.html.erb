@@ -1,0 +1,42 @@
+<header class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center">Show Post</h1>
+    </div>
+  </div>
+</header>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2 text-center" id="nav-panel">
+        <button class="get-around btn btn-info" type="submit"><%= link_to "Posts", posts_path %></button>
+        <button class="get-around btn btn-info" type="submit"><%= link_to 'New Post', new_post_path %></button>
+      </div>
+      <div class="col-xs-10">
+        <p>
+          <strong>Title:</strong>
+          <%= @post.title %><br/><strong>By:</strong> <%= @post.author %>
+        </p>
+
+        <p>
+          <strong>Post:</strong>
+          <%= simple_format(@post.content) %>
+        </p>
+
+        <button class="get-around btn btn-info" type="submit"><%= link_to 'Edit', edit_post_path(@post) %></button>
+        <button class="get-around btn btn-info" type="submit"><%= link_to 'Back', posts_path %></button>
+      </div>
+    </div>
+  </div>
+</body>
+
+<footer>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="foot-nav" class="col-xs-12 text-center">
+        <a id="twitter" href="https://twitter.com/improv42" target="_blank"><i class="fa fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
