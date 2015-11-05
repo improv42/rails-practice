@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :owner %><br>
-    <%= f.text_field :owner %>
+    <%= f.collection_select :owner_id, Owner.all, :id, :name, prompt: "Select an Owner" %>
   </div>
   <div class="actions">
     <%= f.submit %>
