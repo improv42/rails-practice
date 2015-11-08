@@ -13,3 +13,146 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar-default {
+  background-color: rgba(16, 12, 10, 0.8);
+}
+
+#logo :hover {
+  color: #339213;
+}
+
+#bs-example-navbar-collapse-1 :hover {
+  color: #339213;
+}
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 150px;
+}
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 100px;
+  width: 0;
+  height: 100%;
+  margin-left: -100px;
+  overflow-y: auto;
+  padding-top: 40px;
+  background-color: rgba(16, 12, 10, 0.8);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 150px;
+}
+
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 40px;
+    width: 150px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #FFF;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #339213;
+    background-color: rgba(16, 12, 10, 0.6);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+#alert {
+  margin-left: -20px;
+}
+
+#page-content {
+  padding-left: 35px;
+}
+
+.btn-default {
+  background-color: rgba(16, 12, 10, 0.8);
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.btn-default a {
+  color: #FEFEFE;
+}
+
+.btn-default :hover {
+  text-decoration: none;
+  color: #339213;
+}
+
+.btn-success {
+  border-radius: 10px;
+  margin: 10px 5px 5px 5px;
+}
+
+.table a {
+  padding: 7px;
+  color: #515151;
+}
+
+.table a:hover {
+  color: #339213;
+  background-color: rgba(16, 12, 10, 0.6);
+  padding: 7px;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 150px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 150px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}

@@ -1,9 +1,12 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Genre:</strong>
-  <%= @genre.genre %>
+  <h3><%= @genre.genre %></h3>
 </p>
 
-<%= link_to 'Edit', edit_genre_path(@genre) %> |
-<%= link_to 'Back', genres_path %>
+<div>
+  <button type="button" class="btn-small btn-default">
+    <%= link_to 'Edit', edit_genre_path(@genre) %>
+  </button>
+  <button type="button" class="btn-small btn-default">
+    <%= link_to 'Back', genres_path %>
+  </button>
+</div>

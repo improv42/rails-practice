@@ -1,14 +1,17 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
+  <h3><%= @artist.name %></h3>
 </p>
 
 <p>
   <strong>Genre:</strong>
-  <%= @artist.genre %>
+  <%= @artist.genre.try( :genre ) %>
 </p>
 
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
+<div>
+  <button type="button" class="btn-small btn-default">
+    <%= link_to 'Edit', edit_artist_path(@artist) %>
+  </button>
+  <button type="button" class="btn-small btn-default">
+    <%= link_to 'Back', artists_path %>
+  </button>
+</div>

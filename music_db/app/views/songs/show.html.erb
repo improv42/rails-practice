@@ -1,14 +1,21 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Title:</strong>
-  <%= @song.title %>
+  <h3><%= @song.title %></h3>
 </p>
 
 <p>
-  <strong>Artist:</strong>
-  <%= @song.artist %>
+  <strong>By:</strong>
+  <%= @song.artist.try( :name ) %>
+</p>
+<p>
+  <strong>Genre:</strong>
+  <%= @song.artist.genre.try( :genre ) %>
 </p>
 
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
+<div>
+  <button type="button" class="btn-small btn-default">
+    <%= link_to 'Edit', edit_song_path(@song) %>
+  </button>
+  <button type="button" class="btn-small btn-default">
+    <%= link_to 'Back', songs_path %>
+  </button>
+</div>

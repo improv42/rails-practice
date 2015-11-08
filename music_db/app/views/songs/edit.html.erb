@@ -1,6 +1,14 @@
 <h1>Editing Song</h1>
 
-<%= render 'form' %>
+<div>
+  <%= render 'form' %>
+</div>
 
-<%= link_to 'Show', @song %> |
-<%= link_to 'Back', songs_path %>
+<div>
+  <button type="button" class="btn-small btn-default">
+    <%= link_to 'Show', @song %>
+  </button>
+  <button type="button" class="btn-small btn-default">
+    <%= link_to 'Back', songs_path %>
+  </button>
+</div>
