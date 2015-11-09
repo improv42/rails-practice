@@ -1,6 +1,9 @@
 # Lays out the song relationships
 class Song < ActiveRecord::Base
   belongs_to :artist
+
+  validates :title, :artist, presence: true
+  validates :title, length: { minimum: 2 }
 end
 
 # == Schema Information

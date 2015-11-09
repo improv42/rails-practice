@@ -1,6 +1,8 @@
 # Lays out the Genre relationships
 class Genre < ActiveRecord::Base
   has_many :artists
+
+  validates :genre, presence: true, length: { minimum: 3 }, uniqueness: true
 end
 
 # == Schema Information
