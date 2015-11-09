@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :genre_id %><br>
-    <%= f.collection_select :genre_id, Genre.all, :id, :genre %>
+    <%= f.collection_select :genre_id, Genre.order('genre'), :id, :genre %>
   </div>
   <div class="actions">
     <%= f.submit "Save Artist", class: "btn btn-sm btn-success" %>

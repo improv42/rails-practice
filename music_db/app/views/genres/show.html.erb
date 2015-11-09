@@ -1,6 +1,11 @@
-<p>
-  <h3><%= @genre.genre %></h3>
-</p>
+<h3>Artists in <span class="text-primary"><%= @genre.genre %></span></h3>
+
+<ul>
+  <% @genre.artists.each do |artist| %>
+    <li><%= artist.name %></li>
+  <% end %>
+</ul>
+
 
 <div>
   <button type="button" class="btn-small btn-default">

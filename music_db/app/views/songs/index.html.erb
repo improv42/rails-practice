@@ -10,7 +10,7 @@
   </thead>
 
   <tbody>
-    <% @songs.each do |song| %>
+    <% @songs.order('title').each do |song| %>
       <tr>
         <td>
           <%= song.title %>

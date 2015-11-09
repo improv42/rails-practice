@@ -1,11 +1,12 @@
-<p>
-  <h3><%= @artist.name %></h3>
-</p>
+<h3>Songs by <span class="text-primary"><%= @artist.name %></span></h3>
+<small><%= @artist.genre.try(:genre) %></small>
 
-<p>
-  <strong>Genre:</strong>
-  <%= @artist.genre.try( :genre ) %>
-</p>
+<hr>
+<ul>
+  <% @artist.songs.order('title').each do |song| %>
+    <li><%= song.title %></li>
+  <% end %>
+</ul>
 
 <div>
   <button type="button" class="btn-small btn-default">
