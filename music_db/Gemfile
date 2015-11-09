@@ -35,6 +35,8 @@ gem 'quiet_assets', group: :development
 gem 'starter_generators'
 # Adds fancy time and date formatting for humans to enjoy
 gem 'stamp'
+# Adds an annotated schema to each of the models
+gem 'annotate'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
