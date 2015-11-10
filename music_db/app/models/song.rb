@@ -4,6 +4,8 @@ class Song < ActiveRecord::Base
 
   validates :title, :artist, presence: true
   validates :title, length: { minimum: 2 }
+
+  validates_uniqueness_of :title, :scope => :artist_id
 end
 
 # == Schema Information
