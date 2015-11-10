@@ -15,12 +15,13 @@ namespace :db do
 
     # Creates 5 new Genres with the names from Faker > Hacker
     Genre.populate 5 do |genre|
-      genre.genre = Faker::Hacker.noun
+      genre.genre = Faker::Commerce.department(1, true)
 
-      # Creates 5-10 new artists and assigns genres
-      Artist.populate 5..10 do |artist|
+      # Creates 10 new artists and assigns genres and bios
+      Artist.populate 10 do |artist|
         artist.name = Faker::Name.first_name
         artist.genre_id = genre.id
+        artist.bio = Faker::Lorem.paragraph + "\n\n" + Faker::Lorem.paragraph + "\n\n" + Faker::Lorem.paragraph(5)
 
         # Creates 5-10 songs
         Song.populate 5..10 do |song|
@@ -31,5 +32,5 @@ namespace :db do
     end #Genre
   end
 
-  puts "Heck YEAH!  Now you got a bunch of stuff to look at!"
+  puts "Heck YEAH!  Check that stuff out!"
 end

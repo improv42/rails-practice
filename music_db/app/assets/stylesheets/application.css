@@ -56,6 +56,13 @@
     width: 150px;
 }
 
+#social_links {
+  position: absolute;
+  clear: both;
+  display: inline-block;
+  bottom: 0;
+}
+
 
 /* Sidebar Styles */
 
