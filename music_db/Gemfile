@@ -60,5 +60,12 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Populates the development database so you have data to work with
+  gem 'populator'
+
+  # Creates fake information to populate your development database
+  gem 'faker'
+
 end
 
