@@ -1,14 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>ID:</strong>
-  <%= @dog.id %>
-</p>
-
-<p>
-  <strong>Name:</strong>
+<h2>
   <%= @dog.name %>
-</p>
+  <br>
+  <small><strong></strong><%= @dog.owner.try(:name) %>'s Dog</small>
+  <br>
+  <small><%= @dog.owner.phone %></small>
+  <hr>
+</h2>
 
 <p>
   <strong>Breed:</strong>
@@ -20,10 +17,5 @@
   <%= @dog.age %>
 </p>
 
-<p>
-  <strong>Owner:</strong>
-  <%= @dog.owner.try(:name) %>
-</p>
-
-<%= link_to 'Edit', edit_dog_path(@dog) %> |
-<%= link_to 'Back', dogs_path %>
+<%= link_to 'Edit', edit_dog_path(@dog), class: "btn btn-info btn-sm" %>
+<%= link_to 'Back', dogs_path, class: "btn btn-info btn-sm" %>

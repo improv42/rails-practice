@@ -23,8 +23,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'rubocop'
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -46,6 +44,10 @@ gem 'quiet_assets', group: :development
 gem 'starter_generators'
 # Adds fancy time and date formatting for humans to enjoy
 gem 'stamp'
+# Adds schema to models
+gem 'annotate'
+# Adds formatting to console printing so you can actually understand the stuff
+gem 'awesome_print'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
