@@ -39,6 +39,8 @@ gem 'stamp'
 gem 'annotate'
 # Adds a much better way to print things in the console
 gem 'awesome_print'
+# Adds User accounts
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

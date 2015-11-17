@@ -38,23 +38,22 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Account", root_url %></li>
-        <li class="visible-xs"><%= link_to "Songs", songs_url %></li>
-        <li class="visible-xs"><%= link_to "Artists", artists_url %></li>
-        <li class="visible-xs"><%= link_to "Genres", genres_url %></li>
+        <% if user_signed_in? %>
+          <li class="visible-xs"><%= link_to "Songs", songs_url %></li>
+          <li class="visible-xs"><%= link_to "Artists", artists_url %></li>
+          <li class="visible-xs"><%= link_to "Genres", genres_url %></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </nav>
 
   <div class="container-fluid">
     <div class="row" id="wrapper">
-      <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-          <li><%= link_to "Songs", songs_url %></li>
-          <li><%= link_to "Artists", artists_url %></li>
-          <li><%= link_to "Genres", genres_url %></li>
-        </ul>
-      </div>
+      <% if user_signed_in? %>
+        <%= render 'layouts/sidebar' %>
+      <% else %>
+        <%= render 'layouts/sidebar_empty' %>
+      <% end %>
       <div class="col-lg-12" id="page-content">
         <% if notice.present? %>
           <div class="alert alert-dismissable alert-success" id="alert">

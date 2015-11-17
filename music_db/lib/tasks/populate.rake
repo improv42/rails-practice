@@ -30,7 +30,6 @@ namespace :db do
         end # Song
       end # Artist
     end #Genre
+    puts "Heck YEAH!  Check that stuff out!"
   end
-
-  puts "Heck YEAH!  Check that stuff out!"
 end
