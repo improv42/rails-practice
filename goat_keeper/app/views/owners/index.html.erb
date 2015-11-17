@@ -1,0 +1,38 @@
+<div>
+  <h1>Listing Owners
+  <%= link_to 'New Owner', new_owner_path, class: "btn btn-info btn-xs" %></h1>
+  <!-- Owner Search Box -->
+  <%= form_tag("/owners", method: :get, role: 'search', class: 'form-inline' ) do %>
+    <div class="form-group">
+      <%= text_field_tag(:search, nil, placeholder: 'Owner\'s Name', class: 'form-control input-sm') %>
+    </div>
+    <%= submit_tag('Search', class: 'btn btn-info btn-xs') %>
+  <% end %>
+</div>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Phone</th>
+      <th>Alt phone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @owners.order('last_name').each do |owner| %>
+      <tr>
+        <td><%= owner.first_name %></td>
+        <td><%= owner.last_name %></td>
+        <td><%= owner.phone %></td>
+        <td><%= owner.alt_phone %></td>
+        <td><%= link_to fa_icon('eye', text: 'Show Owner'), owner %></td>
+        <td><%= link_to fa_icon('pencil', text: 'Edit Owner'), edit_owner_path(owner) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
